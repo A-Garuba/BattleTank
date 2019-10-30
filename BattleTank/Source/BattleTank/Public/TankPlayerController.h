@@ -24,4 +24,25 @@ private:
     ATank* GetControlledTank() const;
     
     ATank* GetPlayerTank() const;
+    
+    // moves player's tank barrel towards aiming reticle
+    void AimTowardsCrosshair();
+    
+    // return an OUT parameter, true if hits landscape
+    bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+    
+    // return an OUT parameter
+    bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+    
+    // return an OUT parameter, ray-trace along LookDirection
+    bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+    
+    UPROPERTY(EditAnywhere)
+    float CrosshairXLocation = .5;
+    
+    UPROPERTY(EditAnywhere)
+    float CrosshairYLocation = .3333;
+    
+    UPROPERTY(EditAnywhere)
+    float LineTraceRange = 1000000; //10km in centimeters
 };
