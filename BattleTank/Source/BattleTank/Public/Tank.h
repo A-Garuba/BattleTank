@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Alexander Garuba 2019.
 
 #pragma once
 
@@ -8,6 +8,7 @@
 
 // Forward Declarations
 class UTankBarrel;
+class UTankTurret;
 class UTankAimingComponent;
 
 UCLASS()
@@ -16,11 +17,17 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-    // Called by controller to delegate aiming to Aiming Component of controller's Tank
-    void AimAt(FVector HitLocation);
-    
     UFUNCTION(BlueprintCallable, Category = Setup)
     void SetBarrelReference(UTankBarrel* BarrelToSet);
+    
+    UFUNCTION(BlueprintCallable, Category = Setup)
+    void SetTurretReference(UTankTurret* TankToSet);
+    
+    UFUNCTION(BlueprintCallable, Category = Firing)
+    void Fire();
+    
+    // Called by controller to delegate aiming to Aiming Component of controller's Tank
+    void AimAt(FVector HitLocation);
     
 protected:
     UTankAimingComponent* TankAimingComponent = nullptr;
@@ -36,5 +43,5 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
     
     UPROPERTY(EditAnywhere, Category = Firing)
-    float LaunchSpeed = 100000; //1000 m/s in centimeters per second
+    float LaunchSpeed = 4000; //40 m/s in centimeters per second
 };

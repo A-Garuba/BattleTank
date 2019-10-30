@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Alexander Garuba 2019.
 
 #include "TankAIController.h"
 #include "Tank.h"

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Alexander Garuba 2019.
 
 #include "Tank.h"
 #include "TankAimingComponent.h"
@@ -18,6 +18,12 @@ void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
     TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
 
+// delegate to TankAimingComponent
+void ATank::SetTurretReference(UTankTurret* TurretToSet)
+{
+    TankAimingComponent->SetTurretReference(TurretToSet);
+}
+
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
 {
@@ -35,4 +41,9 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void ATank::AimAt(FVector HitLocation)
 {
     TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
+}
+
+void ATank::Fire()
+{
+    
 }

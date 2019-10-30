@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Alexander Garuba 2019.
 
 #pragma once
 
@@ -20,7 +20,7 @@ public:
     
 private:
     UPROPERTY(EditAnywhere, Category = Setup)
-    float MaxDegreesPerSecond = 5;
+    float MaxDegreesPerSecond = 10;
     
     UPROPERTY(EditAnywhere, Category = Setup)
     float MaxElevationDegrees = 40;
