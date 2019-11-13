@@ -7,7 +7,7 @@
 #include "TankTurret.generated.h"
 
 /**
- * 
+ * Tank Turret is used to rotate the barrel left and right at a rate
  */
 UCLASS(meta = (BlueprintSpawnableComponent))
 class BATTLETANK_API UTankTurret : public UStaticMeshComponent
@@ -19,6 +19,6 @@ public:
     void Rotate(float RelativeSpeed);
     
 private:
-    UPROPERTY(EditAnywhere, Category = Setup)
+    UPROPERTY(EditDefaultsOnly, Category = Setup)
     float MaxDegreesPerSecond = 25;
 };
